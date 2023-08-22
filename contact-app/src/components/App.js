@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Header from "./Header";
 import AddContact from "./AddContact";
@@ -38,9 +39,33 @@ function App() {
 
   return (
     <div className="ui container">
+      <Router>
       <Header />
-      <AddContact addContactHandler={addContactHandler} />
-      <ContactList contacts={contacts} getContactId={removeContactHandler} />
+      <Switch>
+        <Route
+        path="/"
+        exact
+        render={(props)=>(<ContactList
+          {...props}
+          contacts={contacts}
+          getContactId={removeContactHandler} 
+          />
+          )}
+        />
+
+        <Route
+        path="/add"
+        exact
+        render={(props)=>(<AddContact
+          {...props}
+          addContactHandler={addContactHandler}
+          />
+          )}
+        />
+      </Switch>
+      </Router>
+      {/* <AddContact addContactHandler={addContactHandler} />
+      <ContactList contacts={contacts} getContactId={removeContactHandler} /> */}
     </div>
     //6  Pass contacts array as props to ContactList.js
   );
