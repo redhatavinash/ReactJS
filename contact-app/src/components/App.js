@@ -10,7 +10,7 @@ import {v4 as uuid} from "uuid";
 function App() {
 
   const LOCAL_STORAGE_KEY="contacts";
-  //5 create local contacts array
+  //5. create local contacts array
   //10. remove the array and use usestate react hook
   const [contacts, setContacts]=useState([]);
 
