@@ -11,7 +11,7 @@ function App() {
 
   const LOCAL_STORAGE_KEY="contacts";
   //5 create local contacts array
-  //10 remove the array and use usestate react hook
+  //10. remove the array and use usestate react hook
   const [contacts, setContacts]=useState([]);
 
   const addContactHandler=(contact)=>{
