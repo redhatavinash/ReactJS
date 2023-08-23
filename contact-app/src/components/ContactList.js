@@ -3,16 +3,24 @@ import { Link } from "react-router-dom";
 import ContactCard from "./ContactCard";
 
 const ContactList=(props)=>{
+
+    console.log(props);
     //7 passed props (contacts) from app.js
 
     const deleteContactHandler=(id)=>{
         props.getContactId(id);
     };
 
+    const contacts=[{
+        id:"1",
+        name:"avinash pandey",
+        email:"avinashpandeypro@gmail.com",
+    },
+];
     
     
     //8 create this function to display name and email from contacts array passed as props
-    const renderContactList=props.contacts.map((contact)=>{
+    const renderContactList=contacts.map((contact)=>{
         return(
             <ContactCard contact={contact} 
             clickHandler={deleteContactHandler}
