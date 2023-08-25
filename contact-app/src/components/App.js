@@ -5,6 +5,7 @@ import Header from "./Header";
 import AddContact from "./AddContact";
 import ContactList from "./ContactList";
 import {v4 as uuid} from "uuid";
+import ContactDetail from "./ContactDetail";
 
 //1 Add component which have exported already
 function App() {
@@ -55,13 +56,15 @@ function App() {
 
         <Route
         path="/add"
-        exact
         render={(props)=>(<AddContact
           {...props}
           addContactHandler={addContactHandler}
           />
           )}
         />
+
+        
+        <Route path="/contact/:id" component={ContactDetail} />
       </Switch>
       </Router>
       {/* <AddContact addContactHandler={addContactHandler} />

@@ -23,7 +23,7 @@ const ContactList=(props)=>{
 
     //4 create div for contact list
     return(
-        <div class="main">
+        <div className="main">
             <h2>Contact List</h2>
             <Link to="/add">
             <button className="ui button blue right">Add Contact</button>
